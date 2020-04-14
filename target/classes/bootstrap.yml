@@ -1,5 +1,0 @@
-# 比application context先加载
-# 配置应用名称
-spring:
-  application:
-    name: eurekaservice
