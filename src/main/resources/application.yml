@@ -1,4 +1,4 @@
-#每次服务注册西药30s的时间才能显示在Euraka服务中，因为Eureka需要从服务接收3次连续的心跳包ping，每次心跳包ping的间隔时间为10s，然后才能使用这个服务
+#每次服务注册需要30s的时间才能显示在Euraka服务中，因为Eureka需要从服务接收3次连续的心跳包ping，每次心跳包ping的间隔时间为10s，然后才能使用这个服务
 
 server:
   #设置Eureka服务的默认端口
@@ -12,3 +12,7 @@ eureka:
   server:
     # 在Eureka服务器获取不到集群里对等服务器上的实例时，需要等待的时间，单位为毫秒，默认为1000 * 60 * 5
     wait-time-in-ms-when-sync-empty: 5
+    # Eureka服务器是否开启自我保护机制，默认为‘true’开启
+    enable-self-preservation: true
+    # Eureka服务器扫描失效服务器的间隔时间，默认为‘60 * 1000’60秒
+    eviction-interval-timer-in-ms: 60000
